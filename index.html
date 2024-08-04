@@ -26,7 +26,7 @@
           <div class="col-lg-12 game-info">
             <img class="logo-src" src="assets/images/logoclsa.png" alt="">
             <h1>Vagos Survival</h1>
-            <h3 class="mb-4 countdown" id="countdown">Cargando...</h3>
+            <h3 class="mb-4">IP: samp.cl-rp.com:7777</h3>
             <p class="lead">
               <a href="index.html" class="btn btn-primary button-vip"><i class="bi bi-star-fill"></i>&nbsp;&nbsp;Proximamente...</a><br>
               <a href="https://www.xbox.com/es-US/games/store/minecraft-java-bedrock-edition-for-pc/9nxp44l49shj" class="btn btn-primary button mt-3"><i class="bi bi-people-fill"></i>&nbsp;&nbsp;Consigue Minecraft</a>
@@ -52,26 +52,4 @@
 
 
 </body>
-  <script>
-    function updateCountdown() {
-      const countdownElement = document.getElementById('countdown');
-      const targetDate = new Date('August 3, 2024 21:00:00 GMT-0300').getTime();
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance <= 0) {
-        countdownElement.innerHTML = "¡La IP ya está disponible!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownElement.innerHTML = `Faltan ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos`;
-    }
-
-    setInterval(updateCountdown, 1000);
-  </script>
 </html>
