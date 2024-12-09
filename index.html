@@ -26,7 +26,7 @@
           <div class="col-lg-12 game-info">
             <img class="logo-src" src="assets/images/logoclsa.png" alt="">
             <h1>Vagos Studios</h1>
-            <h3 class="mb-4">IP: Proximamente... </h3>
+            <h3 class="mb-4"> IP: <span id="countdown"> Cargando... </span></h3>
             <p class="lead">
               <a href="http://tienda.vagos.xyz/" class="btn btn-primary button-vip"><i class="bi bi-star-fill"></i>&nbsp;&nbsp;Tienda</a><br>
               <a href="https://www.xbox.com/es-US/games/store/minecraft-java-bedrock-edition-for-pc/9nxp44l49shj" class="btn btn-primary button mt-3"><i class="bi bi-people-fill"></i>&nbsp;&nbsp;Consigue Minecraft</a>
@@ -52,4 +52,34 @@
 
 
 </body>
+
+<script>
+  // Configura la fecha objetivo
+  const targetDate = new Date("2025-01-25T00:00:00"); // Cambia esta fecha a tu objetivo
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeRemaining = targetDate - now;
+
+    if (timeRemaining <= 0) {
+      document.getElementById("countdown").textContent = "¡Lanzado!";
+      clearInterval(interval); // Detener el intervalo una vez que se llegue a la fecha
+      return;
+    }
+
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").textContent = 
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  // Actualizar cada segundo
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown(); // Llamar una vez para que no haya retraso inicial
+</script>
+
+
 </html>
